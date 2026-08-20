@@ -51,7 +51,7 @@ const priceFormatter = new Intl.NumberFormat("ru-RU", {
 const todayIso = new Date().toISOString().slice(0, 10)
 
 async function fetchTrains(): Promise<Train[]> {
-  const response = await fetch("/data/trains.json")
+  const response = await fetch(`${import.meta.env.BASE_URL}/data/trains.json`)
 
   if (!response.ok) {
     throw new Error("Не удалось загрузить список поездов")
